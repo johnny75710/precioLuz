@@ -1,0 +1,14 @@
+.switcher{
+    margin-top: 1.5rem;
+    line-height: 2.4rem;
+    background-color: #7577803d;
+}
+.switcher a{
+    padding: .7rem;
+    color: #FEFEFF;
+    text-decoration: none;
+}
+.switcher .active{
+    background-color: #FBAE3C;
+    font-weight: bold;
+}

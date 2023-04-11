@@ -1,0 +1,13 @@
+<div class="container">
+    <span style="font-size: 2rem;">⚡</span>
+      <h1>{{title}}</h1>
+      <span [innerHTML]="subtitle"></span>
+      <app-switcher (formEvent)="getForm($event)"></app-switcher>
+      <ng-container *ngIf="chooseForm=='login'; else showRegister">
+        <app-login></app-login>
+      </ng-container>
+
+      <ng-template #showRegister>
+        <app-signup></app-signup>
+      </ng-template>
+    </div>

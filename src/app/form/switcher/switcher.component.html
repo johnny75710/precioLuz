@@ -1,0 +1,4 @@
+<div class="switcher">
+    <a [ngClass]="{ 'active': isLoginActive }" (click)="toggleActive('login')">Iniciar sesión</a>
+    <a [ngClass]="{ 'active': !isLoginActive }" (click)="toggleActive('signup')">No tengo cuenta</a>
+</div>

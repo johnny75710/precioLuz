@@ -1,0 +1,45 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.7rem;
+}
+
+input{
+    margin-bottom: .5rem;
+    height: 2.5rem;
+    border: none;
+    border: 5px;
+    background-color: #fefeff0e;
+    border-radius: .4rem;
+    border-color: transparent;
+    border-bottom: 0.1px solid #FEFEFF;
+    text-indent: .4rem;
+    outline: none;
+    width: 90%;
+    transition: .5s all;
+}
+
+input:focus{
+    border: 1px solid #FEFEFF;
+    text-indent: .5rem;
+
+}
+button{
+    margin-top: .7rem;
+    margin-bottom: 1rem;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: .4rem;
+    background-color: #fbaf3c;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fefeffb4;
+    opacity: 1; /* Firefox */
+  }
