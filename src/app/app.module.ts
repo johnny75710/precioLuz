@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormModule } from './form/form.module';
 
-
 @NgModule({
     declarations: [
         AppComponent
@@ -14,7 +13,7 @@ import { FormModule } from './form/form.module';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormModule,
+        FormModule,  
     ]
 })
 export class AppModule { }

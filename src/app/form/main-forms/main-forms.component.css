@@ -6,19 +6,21 @@
       transform: translate(-50%, -50%);
       background-color: #0000006e;
       border: 1px solid #FEFEFF;
-      text-align: center;
       padding: 1rem;
       border-radius: .4rem;
-
-      width: auto;
+      width: 310px;
+      text-align: center;
+      overflow: hidden;
     }
     
 h1{
     margin-top: 1rem;
-    color: #FEFEFF
+    color: #FEFEFF;
+    text-align: center;
 }
 
 span{
     color: #FEFEFF;
     font-size: 14px;
+    transition: 1s all;
 }

@@ -1,13 +1,16 @@
 <div class="container">
-    <span style="font-size: 2rem;">⚡</span>
-      <h1>{{title}}</h1>
-      <span [innerHTML]="subtitle"></span>
-      <app-switcher (formEvent)="getForm($event)"></app-switcher>
-      <ng-container *ngIf="chooseForm=='login'; else showRegister">
-        <app-login></app-login>
-      </ng-container>
+  <span style="font-size: 2rem">⚡</span>
+  <div>
+    <h1>{{ title }}</h1>
+    <span [innerHTML]="subtitle"></span>
+  </div>
+  <app-switcher (formEvent)="getForm($event)"></app-switcher>
+  <div>
+    <app-login
+      style="display: block"
+      *ngIf="chooseForm === 'login'"
+    ></app-login>
 
-      <ng-template #showRegister>
-        <app-signup></app-signup>
-      </ng-template>
-    </div>
+    <app-signup *ngIf="chooseForm === 'signup'"></app-signup>
+  </div>
+</div>

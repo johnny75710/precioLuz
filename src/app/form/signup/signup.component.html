@@ -1,9 +1,41 @@
-<form action="">
-    <label for="name"></label>
-    <input type="text" placeholder="Nombre">
-    <label for="userName"></label>
-    <input type="text" placeholder="Nombre de Usuario" />
-    <label for="pwd"></label>
-    <input type="password" placeholder="Contraseña" />
-    <button value="Iniciar sesión">Registro</button>
+<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+    <label for="name">Nombre</label>
+    <input type="text" placeholder="Nombre" formControlName="name">
+    <label for="userName">Nombre de usuario</label>
+    <input type="text" placeholder="Mínimo 5 caracteres" formControlName="username"/>
+    <label for="password">Contraseña</label>
+    <input type="password" placeholder="Contraseña" formControlName="password"/>
+
+    <span>Vamos a calcular tu gasto</span>
+    <label for="size"></label>
+    <select name="size" id="" formControlName="size">
+      <option value="" disabled="disabled" selected="selected">Selecciona el tamaño de tu hogar</option>
+      <option value="SMALL">Casa pequeña</option>
+      <option value="MEDIUM">Casa mediana</option>
+      <option value="LARGE">Casa grande</option>
+    </select>
+
+    <label for="consumption"></label>
+    <select name="consumption" id="" formControlName="consumption">
+      <option value="" disabled="disabled" selected="selected">¿Cuanto consumes?</option>
+      <option value="LOW">Consumo bajo</option>
+      <option value="MEDIUM">Consumo medio</option>
+      <option value="HIGH">Consumo alto</option>
+    </select>
+
+    <span>En caso de que olvides tu contraseña</span>
+    <label for="security_q">
+      <select name="security_q" id="" formControlName="security_q">
+      <option value="" disabled="disabled" selected="selected">Selecciona una pregunta</option>
+      <option value="1">¿Modelo de tu primer coche?</option>
+      <option value="2">¿El nombre de tu primera mascota?</option>
+      <option value="3">¿Razones por las que te cae bien tu suegra?</option>
+      </select>
+    </label>
+
+    <label for="security_a">
+      <input type="text" name="security_a" placeholder="Respuesta a la pregunta" formControlName="security_a">
+    </label>
+
+    <button value="Iniciar sesión" [disabled]="!signupForm.valid" type="submit">Registro</button>
   </form>

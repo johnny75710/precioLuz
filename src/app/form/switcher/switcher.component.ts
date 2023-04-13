@@ -5,6 +5,7 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
   templateUrl: './switcher.component.html',
   styleUrls: ['./switcher.component.css']
 })
+
 export class SwitcherComponent implements OnInit{
 
     isLoginActive: boolean = true;
