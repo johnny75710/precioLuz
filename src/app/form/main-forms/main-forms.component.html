@@ -6,8 +6,7 @@
   </div>
   <app-switcher (formEvent)="getForm($event)"></app-switcher>
   <div>
-    <app-login
-      style="display: block"
+    <app-login 
       *ngIf="chooseForm === 'login'"
     ></app-login>
 

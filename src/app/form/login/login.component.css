@@ -4,9 +4,10 @@ form{
     align-items: center;
     justify-content: center;
     margin-top: 1.7rem;
+    transition: .5s all;
 }
 
-input{
+select, input{
     margin-bottom: .5rem;
     height: 2.5rem;
     border: none;
@@ -14,19 +15,51 @@ input{
     background-color: #fefeff0e;
     border-radius: .4rem;
     border-color: transparent;
-    border-bottom: 0.1px solid #FEFEFF;
+    border-bottom: 2px solid #FEFEFF;
+    text-indent: .4rem;
+    outline: none;
+    width: 90%;
+    transition: .5s all;
+    color: #fefeffb4;
+}
+span{
+    margin-top: .7rem;
+    margin-bottom: .5rem;
+    width: 90%;
+    color: #FEFEFF;
+    font-size: 14px;
+    text-align: start;
+}
+label{
+    margin-left: .6rem;
+    margin-bottom: .4rem;
+    width: 90%;
+    color: #FEFEFF;
+    font-size: 12px;
+    text-align: start;
+}
+select input:focus{
+    border: 1px solid #FEFEFF;
+    text-indent: .5rem;
+
+}
+
+select>option{
+    margin-bottom: .5rem;
+    height: 2.5rem;
+    border: none;
+    border: 5px;
+    color: #050505;
+    border-radius: .4rem;
+    border-color: transparent;
+    border-bottom: 2px solid #FEFEFF;
     text-indent: .4rem;
     outline: none;
     width: 90%;
     transition: .5s all;
 }
-
-input:focus{
-    border: 1px solid #FEFEFF;
-    text-indent: .5rem;
-
-}
 button{
+    transition: .4s all;
     margin-top: .7rem;
     margin-bottom: 1rem;
     border: none;
@@ -37,9 +70,40 @@ button{
     font-size: 16px;
     text-transform: capitalize;
     font-weight: 600;
+    cursor: pointer;
 }
-
+button:hover:disabled{
+    background-color: #EB251E;
+}
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fefeffb4;
     opacity: 1; /* Firefox */
+  }
+
+  input.ng-invalid{
+    border-bottom: 2px solid #E11A14;
+  }
+
+  select.ng-invalid{
+    border-bottom: 2px solid #E11A14;
+  }
+
+  button:disabled{
+    background-color: #ef4943;
+  }
+
+  form>div>div{
+    font-size: 12px;
+    border-left: 3px solid #ef4943;
+    border-radius: .2rem;
+    padding: 1rem;
+    background-color: #0000002f;
+    width: 95%;
+    text-align: left;
+margin: 0;
+    color: #FEFEFF;
+  }
+
+  form>div{
+    transition: 4s all;
   }

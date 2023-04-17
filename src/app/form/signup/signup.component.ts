@@ -1,7 +1,7 @@
 import { ParseSourceFile } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { User } from '../interfaces/user.interfaces'
+import { Signup } from '../interfaces/signup.interfaces'
 import { FormService } from '../form.service';
 
 @Component({
@@ -11,9 +11,10 @@ import { FormService } from '../form.service';
 })
 export class SignupComponent implements OnInit {
 
+    
   signupForm: FormGroup = new FormGroup({})
   house: number = 0;
-
+  error: string = ''; 
   constructor(private formService: FormService){}
 
   ngOnInit(): void {
@@ -33,7 +34,7 @@ export class SignupComponent implements OnInit {
   }
 
   signup() {
-    const formData: User = {
+    const formData: Signup = {
       Name: this.signupForm.value.name,
       UserName: this.signupForm.value.username, 
       Password: this.signupForm.value.password,
@@ -44,7 +45,9 @@ export class SignupComponent implements OnInit {
     console.log(formData)
 
     this.formService.signup(formData).subscribe(
-      res => console.log(res), error => console.error(error)
+      res => {
+        this.error = 'noError'
+      }, error => this.error = error.error.Message
     )
   }
 

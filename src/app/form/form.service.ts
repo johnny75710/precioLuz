@@ -1,19 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { User } from "./interfaces/user.interfaces"
+import { Signup } from './interfaces/signup.interfaces'
 import { Observable } from 'rxjs';
+import { Login } from './interfaces/login.interfaces';
+import { ResponseL } from './interfaces/responseL.interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormService {
 
-  private url = 'http://localhost:3001/user'
+  private urlSignup = 'http://localhost:3001/signup'
+  private urlLogIn = 'http://localhost:3001/login'
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, ) { }
 
-  signup(datosForm: User): Observable<User> {
-    return this.http.post<User>(this.url, datosForm)
+  signup(datosForm: Signup): Observable<Signup> {
+    return this.http.post<Signup>(this.urlSignup, datosForm)
   }
+
+  login(formData: Login): Observable<ResponseL>{
+    return this.http.post<any>(this.urlLogIn, formData)
+  }  
 }

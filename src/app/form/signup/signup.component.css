@@ -91,3 +91,30 @@ button:hover:disabled{
   button:disabled{
     background-color: #ef4943;
   }
+
+  .errorMsg{
+    font-size: 12px;
+    border-left: 3px solid #ef4943;
+    border-radius: .2rem;
+    padding: 1rem;
+    background-color: #0000002f;
+    width: 95%;
+    text-align: left;
+margin: 0;
+    color: #FEFEFF;
+  }
+
+  .successMsg{
+    font-size: 12px;
+    border-left: 3px solid #0ed61e;
+    border-radius: .2rem;
+    padding: 1rem;
+    background-color: #0000002f;
+    width: 95%;
+    text-align: left;
+margin: 0;
+    color: #FEFEFF;
+  }
+  form>div{
+    transition: 4s all;
+  }

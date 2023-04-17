@@ -7,6 +7,8 @@ import { MainFormsComponent } from './main-forms/main-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
+import { Router } from '@angular/router';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserAnimationsModule, 
     ReactiveFormsModule,
     FormsModule, 
-    HttpClientModule
+    HttpClientModule, 
+    AppRoutingModule
   ], 
   exports: [
     MainFormsComponent
