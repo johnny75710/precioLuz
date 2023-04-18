@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormService } from '../form.service';
 import { Router } from '@angular/router';
@@ -11,21 +11,26 @@ import { Login } from '../interfaces/login.interfaces';
 })
 export class LoginComponent implements OnInit{
 
+  error: string = '';
   loginForm: FormGroup = new FormGroup({})
+  resetPassword: boolean = false;
+  linkMessage: string = '¿Contraseña olvidada?'
+
+  @Output() resetOrLogin = new EventEmitter<boolean>();
 
   constructor(private formService: FormService, private router:Router){}
 
   ngOnInit(): void {
       this.loginForm = this.createForm();
       if(localStorage.getItem('token')){
-        this.router.navigate(['inicio'])
+        this.router.navigate([''])
       }
   }
 
   createForm(): FormGroup{
     return new FormGroup({
-      username: new FormControl("", [Validators.required]),
-      password: new FormControl("", [Validators.required])
+      username: new FormControl("", [Validators.required, Validators.minLength(5)]),
+      password: new FormControl("", [Validators.required, Validators.minLength(8)])
     })
   }
 
@@ -38,10 +43,20 @@ export class LoginComponent implements OnInit{
     this.formService.login(formData).subscribe(res => {
       if(Object.keys(res.token).length > 0){
         localStorage.setItem("token", res.token);
-        localStorage.setItem("username", res.username)
-        localStorage.setItem("house", res.house)
-        this.router.navigate(['inicio'])
+        this.router.navigate([''])
       }
-    }, err => console.log(err))
+    }, error => this.error = error.error.Message)
+  }
+
+  resetPwd(){
+    if(this.resetPassword){
+      this.resetPassword = false;
+      this.linkMessage = "¿Contraseña olvidada?"
+
+    } else {
+      this.resetPassword = true;
+      this.linkMessage= 'Ir a Inicio de Sesión'
+    }
+    this.resetOrLogin.emit(this.resetPassword)
   }
 }

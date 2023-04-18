@@ -11,6 +11,7 @@
       width: 310px;
       text-align: center;
       overflow: hidden;
+      color: #FEFEFF;
     }
     
 h1{
@@ -24,3 +25,4 @@ span{
     font-size: 14px;
     transition: 1s all;
 }
+

@@ -7,8 +7,8 @@ import { MainFormsComponent } from './main-forms/main-forms.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
-import { Router } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +16,7 @@ import { AppRoutingModule } from '../app-routing.module';
     SignupComponent,
     SwitcherComponent,
     MainFormsComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,12 @@
-<form [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
+<app-reset-password *ngIf="resetPassword"></app-reset-password>
+<form *ngIf="!resetPassword" [formGroup]="loginForm" (ngSubmit)="login()" novalidate>
     <label for="userName"></label>
     <input type="text" placeholder="Nombre de Usuario" formControlName="username"/>
     <label for="pwd"></label>
     <input type="password" placeholder="Contraseña" formControlName="password"/>
-    <button value="Iniciar sesión">Iniciar sesión</button>
+    <button value="Iniciar sesión" [disabled]="!loginForm.valid">Iniciar sesión</button>
+    <div class="errorMsg" *ngIf="error.length > 0">
+      <div [innerHTML]="error"></div>
+    </div>
   </form>
+  <a (click)="resetPwd()">{{ linkMessage }}</a>

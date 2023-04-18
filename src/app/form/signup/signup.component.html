@@ -37,7 +37,7 @@
   </select>
 
   <span>En caso de que olvides tu contraseña</span>
-  <label for="security_q">
+  <label for="security_q"></label>
     <select name="security_q" id="" formControlName="security_q">
       <option value="" disabled="disabled" selected="selected">
         Selecciona una pregunta
@@ -46,22 +46,20 @@
       <option value="2">¿El nombre de tu primera mascota?</option>
       <option value="3">¿Razones por las que te cae bien tu suegra?</option>
     </select>
-  </label>
 
-  <label for="security_a">
+  <label for="security_a"></label>
     <input
       type="text"
       name="security_a"
       placeholder="Respuesta a la pregunta"
       formControlName="security_a"
     />
-  </label>
 
   <button value="Iniciar sesión" [disabled]="!signupForm.valid" type="submit">
     Registro
   </button>
   <div class="errorMsg" *ngIf="error.length > 0 && error != 'noError'">
-    <div></div>
+    <div [innerHTML]="error"></div>
   </div>
 
   <div class="successMsg" *ngIf="error == 'noError'">

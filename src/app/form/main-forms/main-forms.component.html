@@ -5,11 +5,12 @@
     <span [innerHTML]="subtitle"></span>
   </div>
   <app-switcher (formEvent)="getForm($event)"></app-switcher>
+
   <div>
-    <app-login 
-      *ngIf="chooseForm === 'login'"
+    <app-login (resetOrLogin)="resetLogin($event)"
+      *ngIf="chooseForm === 'login' && !resetPassword"
     ></app-login>
 
-    <app-signup *ngIf="chooseForm === 'signup'"></app-signup>
+    <app-signup *ngIf="chooseForm === 'signup' && !resetPassword"></app-signup>
   </div>
 </div>
