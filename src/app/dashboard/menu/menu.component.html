@@ -1,9 +1,21 @@
+<div class="del" *ngIf="delete">
+  <app-delete (closeEvent)="getClose($event)"></app-delete>
+</div>
+<div class="del" *ngIf="consumption">
+  <app-consumption (consumptionEvent)="getConsumption($event)"></app-consumption>
+</div>
+
 <div id="menu">
-  <div><span>⚡</span> <span>{{username}}</span></div>
+  <div>
+    <span>⚡</span> <span>{{ username }}</span>
+  </div>
   <div id="buttons">
-    <button *ngIf="isLoged">Modificar Consumo</button>
-    <button *ngIf="isLoged" class="delete" (click)="showDel()">Borrar Cuenta</button>
-    <button routerLink="login" routerLinkActive="active" *ngIf="!isLoged">Login/Registro</button>
+    <button *ngIf="isLoged" (click)="showConsumption()">Modificar Consumo</button>
+    <button *ngIf="isLoged" class="delete" (click)="showDel()">
+      Borrar Cuenta
+    </button>
+    <button routerLink="login" routerLinkActive="active" *ngIf="!isLoged">
+      Login/Registro
+    </button>
   </div>
 </div>
-<app-delete (closeEvent)="getClose($event)" *ngIf="delete"></app-delete>

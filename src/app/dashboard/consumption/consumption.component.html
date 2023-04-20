@@ -1,0 +1,31 @@
+<div class="container">
+        <span>🖋️</span>
+       <form [formGroup]="consumptionForm" (ngSubmit)="updateConsumption()" novalidate>
+        <label for="size"></label>
+        <select name="size" id="" formControlName="size">
+          <option value="" disabled="disabled" selected="selected">
+            Selecciona el tamaño de tu hogar
+          </option>
+          <option value="SMALL">Casa pequeña</option>
+          <option value="MEDIUM">Casa mediana</option>
+          <option value="LARGE">Casa grande</option>
+        </select>
+      
+        <label for="consumption"></label>
+        <select name="consumption" id="" formControlName="consumption">
+          <option value="" disabled="disabled" selected="selected">
+            ¿Cuanto consumes?
+          </option>
+          <option value="LOW">Consumo bajo</option>
+          <option value="MEDIUM">Consumo medio</option>
+          <option value="HIGH">Consumo alto</option>
+        </select>
+        <div class="errorMsg" *ngIf="error !='noError' && error.length > 0">Error</div>
+        <div class="successMsg" *ngIf="error == 'noError'">Consumo modificado correctamente</div>
+        <button *ngIf="error.length <= 0" type="submit">Modificar Consumo</button>
+        <button (click)="close()" *ngIf="error == 'noError'" type="submit">Cerrar</button>
+       </form>
+
+        <div class="close" (click)="close()">❌</div>
+        
+ </div>

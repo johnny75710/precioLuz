@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class DashboardService {
 
-  private urlUser = 'http://localhost:3001/user'
+  private urlUser = 'http://localhost:3000/user'
   private user : string | null = localStorage.getItem('token');
   
   
@@ -18,9 +18,7 @@ export class DashboardService {
   };
   
 
-  constructor(private http: HttpClient) { 
-
-  }
+  constructor(private http: HttpClient) {}
 
   getUser(){
     return this.http.get<any>(this.urlUser, this.httpOptions)
@@ -30,4 +28,7 @@ export class DashboardService {
     return this.http.delete<any>(this.urlUser, this.httpOptions)
   }
 
+  updateConsumption(formData: any){
+    return this.http.put<any>(this.urlUser, formData, this.httpOptions)
+  }
 }

@@ -5,6 +5,8 @@ import { MenuComponent } from './menu/menu.component';
 import { ContentComponent } from './content/content.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { DeleteComponent } from './delete/delete.component';
+import { ConsumptionComponent } from './consumption/consumption.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,11 +15,14 @@ import { DeleteComponent } from './delete/delete.component';
     MainDashboardComponent,
     MenuComponent,
     ContentComponent,
-    DeleteComponent
+    DeleteComponent,
+    ConsumptionComponent
   ],
   imports: [
     CommonModule, 
-    AppRoutingModule
+    AppRoutingModule, 
+    ReactiveFormsModule,
+    FormsModule, 
   ], 
   exports: [
     MainDashboardComponent,

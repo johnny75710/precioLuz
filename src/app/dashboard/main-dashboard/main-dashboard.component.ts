@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   templateUrl: './main-dashboard.component.html',
   styleUrls: ['./main-dashboard.component.css']
 })
-export class MainDashboardComponent implements OnInit {
+export class MainDashboardComponent implements OnInit{
 
   isLoged: boolean = false;
-  username: string = ''
+  username: string = '';
+
   ngOnInit(): void {
     this.dashboard.getUser()
     .subscribe(res => {
@@ -24,7 +25,5 @@ export class MainDashboardComponent implements OnInit {
   }
 
   constructor(private dashboard: DashboardService, private router:Router) { 
-
   }
-
 }

@@ -62,11 +62,11 @@ export class SignupComponent implements OnInit {
 
         switch (consumption) {
           case 'LOW':
-            return 5;
+            return 1;
           case 'MEDIUM':
-            return 6;
+            return 2;
           case 'HIGH':
-            return 7;
+            return 3;
           default:
             return 0;
         }
@@ -75,11 +75,11 @@ export class SignupComponent implements OnInit {
 
         switch (consumption) {
           case 'LOW':
-            return 9;
+            return 4;
           case 'MEDIUM':
-            return 11;
+            return 5;
           case 'HIGH':
-            return 13;
+            return 6;
           default:
             return 0;
         }
@@ -88,11 +88,11 @@ export class SignupComponent implements OnInit {
 
         switch (consumption) {
           case 'LOW':
-            return 15;
+            return 7;
           case 'MEDIUM':
-            return 19;
+            return 8;
           case 'HIGH':
-            return 22;
+            return 9;
           default:
             return 0;
         }

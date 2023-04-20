@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class MenuComponent {
 
   delete: boolean = false;
+  consumption: boolean = false;
 
   @Input() username: string ='';
   @Input() isLoged: boolean = false;
@@ -19,10 +20,21 @@ export class MenuComponent {
       this.delete = true;
     }
   }
-
+  showConsumption(){
+    if(this.consumption){
+      this.consumption = false;
+    } else{
+      this.consumption = true;
+    }
+  }
   getClose(e: boolean){
     if(!e){
       this.delete = false;
+    }
+  }
+  getConsumption(e: boolean){
+    if(!e){
+      this.consumption = false;
     }
   }
 }

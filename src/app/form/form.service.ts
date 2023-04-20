@@ -12,9 +12,9 @@ import { ResponseL } from './interfaces/responseL.interface';
 })
 export class FormService {
 
-  private urlSignup = 'http://localhost:3001/signup'
-  private urlLogIn = 'http://localhost:3001/login'
-  private resetPwd = 'http://localhost:3001/reset'
+  private urlSignup = 'http://localhost:3000/signup'
+  private urlLogIn = 'http://localhost:3000/login'
+  private resetPwd = 'http://localhost:3000/reset'
 
   constructor( private http: HttpClient, ) { }
 

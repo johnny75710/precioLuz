@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
-import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-delete',
@@ -9,7 +8,7 @@ import { Route, Router } from '@angular/router';
 })
 export class DeleteComponent {
 
-  constructor(private dashboard: DashboardService, private router:Router){}
+  constructor(private dashboard: DashboardService){}
 
   @Output() closeEvent = new EventEmitter<boolean>();
   
@@ -25,8 +24,11 @@ export class DeleteComponent {
   deleteUser(){
     this.dashboard.delUser().subscribe( res => {
       localStorage.removeItem('token');
-      this.router.navigate(['login'])
+      if(this.closed){
+      this.closed = false;
+      this.closeEvent.emit(this.closed)
+      window.location.reload()
+    }
     }, err => console.log(err))
-    localStorage.removeItem('token')
   }
 }

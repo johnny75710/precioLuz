@@ -1,0 +1,96 @@
+div.container {
+    background-color: #fefefe;
+    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+ 
+    width: 350px;
+    border: 1px solid #fbaf3c;
+    transition: .4s all;
+    z-index: 99;
+  }
+  div span {
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+  }
+  
+  button {
+    margin-top: 0.5rem;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    background-color: #fbaf3c;
+    color: #ffffff;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .4s all;
+  }
+  button:hover {
+    background-color: #eb251e;
+  }
+  
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-1rem, 1rem);
+    cursor: pointer;
+    transition: .4s all;
+  }
+  .close:hover{
+      font-size: 1.2rem
+  }
+  
+  select,
+  input {
+    margin-bottom: 0.5rem;
+    height: 2.5rem;
+    border: none;
+    border: 5px;
+    background-color: #fefeff0e;
+    border-radius: 0.4rem;
+    border-color: transparent;
+    border-bottom: 2px solid #fbaf3c;
+    text-indent: 0.4rem;
+    outline: none;
+    width: 90%;
+    transition: 0.5s all;
+  }
+
+  select input:focus {
+    border: 1px solid #fefeff;
+    text-indent: 0.5rem;
+  }
+  
+  .errorMsg {
+    margin-top: .6rem;
+    font-size: 12px;
+    border-left: 3px solid #ef4943;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    width: 95%;
+    text-align: left;
+    margin: 0;
+  }
+  
+  .successMsg {
+    margin-top: .6rem;
+    font-size: 12px;
+    border-left: 3px solid #0ed61e;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    width: 95%;
+    text-align: left;
+    margin: 0;
+  }
