@@ -1,15 +1,31 @@
 <div class="container">
   <div>
     <p>💡</p>
-    <p>Precio más bajo</p>
+    <p>{{maxPrice.Hour}}</p>
+    <p>Precio más alto</p>
+    <p>{{maxPrice.Price}} €/kWh</p>
   </div>
   <div>
     <p>💡</p>
-    <p>Precio más bajo</p>
+    <p>Precio medio</p>
+    <p>Media</p>
+    <p>{{mediumPrice}} €/kWh</p>
   </div>
   <div>
     <p>💡</p>
+    <p>{{minPrice.Hour}}</p>
     <p>Precio más bajo</p>
-    <p>0.123€ kw/h</p>
+    <p>{{minPrice.Price}} €/kWh</p>
+  </div>
+</div>
+
+<div>
+  <div><h2>Media de horas</h2>
+    <hr></div>
+  <div class="container-hours">
+    <div *ngFor="let item of allPrices">
+      <span [ngClass]="{'red': item.Price > mediumPrice, 'green': item.Price <= mediumPrice}">{{ item.Hour }}</span>&nbsp;
+      <span>{{ item.Price.toFixed(3) }} €/kWh</span>
+    </div>
   </div>
 </div>

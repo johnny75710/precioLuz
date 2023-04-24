@@ -1,41 +1,135 @@
-.container{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+.container {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin-bottom: 1rem;
 }
 
-.container>div{
-    background-color: #001220;
-    color: #fefefe;
-    text-align: center;
-    width: 100%;
-    height: 200px;
-    border-radius: .4rem;
-    display: flex;
+.container > div {
+  background-color: #001220;
+  color: #fefefe;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  border-bottom: 2px solid #fbaf3c;
+}
+
+.container > div > p:nth-child(1) {
+  font-size: 2rem;
+}
+
+.container > div > p:nth-child(3) {
+  background-color: #fbaf3c;
+  font-weight: 500;
+  width: 175px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.3rem;
+  border-radius: 100rem;
+  font-size: 1.2rem;
+  height: 2rem;
+}
+
+.container > div > p:nth-child(4) {
+  font-size: 1.2rem;
+}
+
+.container > div > p:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.container-hours {
+  max-width: 1200px;
+  padding: 2rem;
+  margin: auto;
+  text-align: center;
+  background-color: #001220;
+  color: #fefefe;
+  border-bottom-left-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+  border-bottom: 2px solid #fbaf3c;
+}
+
+.container-hours {
+  column-count: 4;
+  column-gap: 20px; /* Puedes ajustar esto según tus necesidades */
+}
+
+.container-hours > div {
+  display: block;
+  margin-bottom: .4rem; /* Puedes ajustar esto según tus necesidades */
+  break-inside: avoid; /* Para evitar que los elementos se dividan en columnas */
+  page-break-inside: avoid; /* Para evitar saltos de página dentro de una columna */
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.red {
+  background-color: #ef4943;
+  padding: 0.2rem 1rem;
+  border-radius: 100rem;
+  display: inline-block;
+  width: 5rem;
+  text-align: center;
+}
+
+.green {
+  background-color: #077a10;
+  padding: 0.2rem 1rem;
+  border-radius: 100rem;
+  display: inline-block;
+  width: 5rem;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 0.4rem;
+}
+
+hr {
+  margin: auto;
+  background-color: #fbaf3c;
+  width: 60%;
+  height: 0.1rem;
+  border: none;
+}
+div:nth-child(2) > div {
+  background-color: #001220;
+  color: #fefefe;
+  padding-top: 1rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .container {
     flex-direction: column;
-    justify-content: center;
-    gap: .8rem;
-    border-bottom: 2px solid #fbaf3c;
+  }
 }
 
-.container>div>p:nth-child(1){
-    font-size: 2rem;
+@media (max-width: 1170px) {
+  .container-hours {
+    column-count: 3;
+  }
 }
 
-.container>div>p:nth-child(2){
-    background-color: #fbaf3c;
-    font-weight: 500;
-    width: 175px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: .3rem;
-    border-radius: 100rem;
-    font-size: 1.2rem;
+@media (max-width: 900px) {
+  .container-hours {
+    column-count: 2;
+  }
 }
-
-@media only screen and (max-width: 768px){
-   .container{
-    flex-direction: column;
-   }
+@media (max-width: 640px) {
+  .container-hours {
+    column-count: 1;
+  }
 }

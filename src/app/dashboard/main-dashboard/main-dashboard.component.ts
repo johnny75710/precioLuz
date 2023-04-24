@@ -16,7 +16,7 @@ export class MainDashboardComponent implements OnInit {
   isLoged: boolean = false;
   username: string = '';
   pricesUp: boolean = false;
-  prices: any = ''
+  prices: any = [];
 
   constructor(private dashboard: DashboardService, private datePipe: DatePipe) {
 
@@ -31,7 +31,6 @@ export class MainDashboardComponent implements OnInit {
 
   checkLogin(){
     if (!localStorage.getItem('token')) {
-      console.log('no token')
       this.isLoged = false;
       this.username = 'Bienvenido';
     } else {
