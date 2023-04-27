@@ -29,6 +29,6 @@ export class DeleteComponent {
       this.closeEvent.emit(this.closed)
       window.location.reload()
     }
-    }, err => console.log(err))
+    }, err => {})
   }
 }

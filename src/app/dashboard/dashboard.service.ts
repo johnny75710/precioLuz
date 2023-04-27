@@ -37,4 +37,8 @@ export class DashboardService {
   getPrices(date: Object){
     return this.http.post<any>(this.urlPrices, date)
   }
+
+  getLogedPrices(user: string){
+    return this.http.get<any>(`${this.urlPrices}/${user}`)
+  }
 }

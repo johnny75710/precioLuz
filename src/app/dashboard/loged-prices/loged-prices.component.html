@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>{{user | titlecase}}, hoy estarías gastando una media de...</h2>
+    <hr>
+    <div class="container-flex">
+        <div>
+            <p class="icon">🪙</p>
+            <p class="price price-max">{{ mediumMax.toFixed(3)}} €</p>
+            <p>Usando la luz en las horas más caras</p>
+            
+        </div>
+        <div>
+            <p class="icon">🪙</p>
+            <p class="price price-med">{{ mediumMed.toFixed(3)}} €</p>
+            <p>Usando la luz tanto en las horas caras como en las baratas</p>
+        </div>
+        <div>
+            <p class="icon">🪙</p>
+            <p class="price price-min">{{ mediumMin.toFixed(3)}} €</p>
+            <p>Usando la luz tanto en las horas más baratas</p>
+        </div>
+    </div>
+    
+</div>

@@ -10,7 +10,10 @@
     <span>⚡</span> <span>{{ username }}</span>
   </div>
   <div id="buttons">
-    <button *ngIf="isLoged" (click)="showConsumption()">Modificar Consumo</button>
+    <button *ngIf="isLoged"  (click)="logOut()">
+      Cerrar Sesión
+    </button>
+    <button *ngIf="isLoged" class="consumption" (click)="showConsumption()">Modificar Consumo</button>
     <button *ngIf="isLoged" class="delete" (click)="showDel()">
       Borrar Cuenta
     </button>

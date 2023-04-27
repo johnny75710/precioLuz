@@ -37,4 +37,11 @@ export class MenuComponent {
       this.consumption = false;
     }
   }
+
+  logOut() {
+    localStorage.removeItem('token');
+    location.reload
+    window.location.reload()
+  }
+    
 }

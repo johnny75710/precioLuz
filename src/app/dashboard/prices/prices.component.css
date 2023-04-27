@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  max-width: 1200px;
+  max-width: 4096px;
   margin-bottom: 1rem;
 }
 
@@ -47,7 +47,7 @@
 }
 
 .container-hours {
-  max-width: 1200px;
+  max-width: 4096px;
   padding: 2rem;
   margin: auto;
   text-align: center;
@@ -56,6 +56,7 @@
   border-bottom-left-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
   border-bottom: 2px solid #fbaf3c;
+  margin-bottom: 1rem;
 }
 
 .container-hours {
@@ -103,13 +104,15 @@ hr {
   height: 0.1rem;
   border: none;
 }
-div:nth-child(2) > div {
+.title {
   background-color: #001220;
   color: #fefefe;
   padding-top: 1rem;
   text-align: center;
-  max-width: 1200px;
+  max-width: 4096px;
   margin: auto;
+  border-top-left-radius: .4rem;
+  border-top-right-radius: .4rem;
 }
 @media (max-width: 768px) {
   .container {

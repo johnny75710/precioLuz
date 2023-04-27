@@ -39,11 +39,14 @@ export class LoginComponent implements OnInit{
       UserName: this.loginForm.value.username,
       Password: this.loginForm.value.password
     }
-
+  
     this.formService.login(formData).subscribe(res => {
       if(Object.keys(res.token).length > 0){
         localStorage.setItem("token", res.token);
-        this.router.navigate([''])
+        // Navegar a la nueva ruta después de guardar el token
+        this.router.navigate(['']).then(() => {
+          location.reload();
+        });
       }
     }, error => this.error = error.error.Message)
   }

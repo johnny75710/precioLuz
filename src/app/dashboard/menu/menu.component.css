@@ -38,8 +38,11 @@ span{
         height: 7.5rem;
     }
 
-    button{
-        width: 14rem;
+    .delete{
+        width: 9rem;
+    }
+    .consumption{
+        width: 11.5rem;
     }
 }
 

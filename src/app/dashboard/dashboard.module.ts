@@ -8,6 +8,7 @@ import { DeleteComponent } from './delete/delete.component';
 import { ConsumptionComponent } from './consumption/consumption.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PricesComponent } from './prices/prices.component';
+import { LogedPricesComponent } from './loged-prices/loged-prices.component';
 
 
 
@@ -18,7 +19,8 @@ import { PricesComponent } from './prices/prices.component';
     ContentComponent,
     DeleteComponent,
     ConsumptionComponent,
-    PricesComponent
+    PricesComponent,
+    LogedPricesComponent
   ],
   imports: [
     CommonModule, 
