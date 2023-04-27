@@ -13,7 +13,6 @@ export class MainDashboardComponent implements OnInit {
   today = new Date();
   date: Object = {};
 
-  user: string = ''
   isLoged: boolean = false;
   username: string = '';
   pricesUp: boolean = false;
@@ -37,8 +36,7 @@ export class MainDashboardComponent implements OnInit {
     } else {
       this.dashboard.getUser().subscribe(
         res => {
-          this.username = `Hola, ${res.user}`;
-          this.user = res.user;
+          this.username = `${res.user}`;
           this.isLoged = true;
         },
         err => {

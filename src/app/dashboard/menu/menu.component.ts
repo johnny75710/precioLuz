@@ -12,7 +12,7 @@ export class MenuComponent {
 
   @Input() username: string ='';
   @Input() isLoged: boolean = false;
-
+  
   showDel(){
     if(this.delete){
       this.delete = false;

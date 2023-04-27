@@ -12,8 +12,8 @@ export class ContentComponent implements OnInit {
 
   @Input() prices: any = [];
   @Input() isLoged: boolean = false;
-  @Input() user: string = '';
-
+  @Input() username: string = '';
+  
   minPrice: any = {}
   maxPrice: any = {}
   mediumPrice: number = 0;

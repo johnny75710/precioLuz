@@ -10,7 +10,7 @@ import { DashboardService } from '../dashboard.service';
 export class LogedPricesComponent implements OnInit {
 
   @Input() isLoged: boolean = false;
-  @Input() user: string = '';
+  @Input() username: string = '';
   @Input() allPrices: any;
   @Input() mediumPrice: number = 0;
 
@@ -22,8 +22,9 @@ export class LogedPricesComponent implements OnInit {
   constructor(private dashboard: DashboardService) { }
 
   async ngOnInit(): Promise<void> {
+    console.log(this.username)
     try {
-      const res = await this.dashboard.getLogedPrices(this.user).toPromise();
+      const res = await this.dashboard.getLogedPrices(this.username).toPromise();
       this.consumption = res.WATS;
     } catch (err) {
       console.log(err);
