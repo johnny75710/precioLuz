@@ -12,16 +12,20 @@ export class ConsumptionComponent implements OnInit {
 
   constructor(private dashboard: DashboardService, private router: Router) { }
 
+  //Emitimos los datos al componente padre
   @Output() consumptionEvent = new EventEmitter<boolean>();
 
+  //Declaramos las variables que vamos a utilizar
   error: string = ''
   consumptionForm: FormGroup = new FormGroup({})
   closed: boolean = true;
 
+  //Al iniciar el componente inicializamos la funcion para crear el formulario
   ngOnInit(): void {
     this.consumptionForm = this.createForm();
   }
 
+  //Funcion para crear el formulario
   createForm(): FormGroup {
     return new FormGroup({
       size: new FormControl("", [Validators.required]),
@@ -29,6 +33,7 @@ export class ConsumptionComponent implements OnInit {
     })
   }
 
+  //Funcion para cerrar el componente
   close() {
     if (this.closed) {
       this.closed = false;
@@ -37,20 +42,21 @@ export class ConsumptionComponent implements OnInit {
     }
   }
 
+  //Funcion para enviar los datos del formulario y modificar el consumo
   updateConsumption() {
     const formData = {
       House: this.consumption()
     }
-    console.log(formData)
+
 
     this.dashboard.updateConsumption(formData).subscribe(
       res => {
         this.error = 'noError'
-        console.log(res)
       }, error => this.error = error.error.Message
     )
   }
 
+  //Funcion para calcular el consumo
   consumption() {
     let consumption = this.consumptionForm.value.consumption
     let size = this.consumptionForm.value.size;

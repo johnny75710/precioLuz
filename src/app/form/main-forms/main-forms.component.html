@@ -1,16 +1,19 @@
-<div class="container">
-  <span style="font-size: 2rem">⚡</span>
-  <div>
-    <h1>{{ title }}</h1>
-    <span [innerHTML]="subtitle"></span>
+<div class="container-flex">
+  <div class="container">
+    <span style="font-size: 2rem">⚡</span>
+    <div>
+      <h1>{{ title }}</h1>
+      <span [innerHTML]="subtitle"></span>
+    </div>
+    <app-switcher (formEvent)="getForm($event)"></app-switcher>
+  
+    <div>
+      <app-login (resetOrLogin)="resetLogin($event)"
+        *ngIf="chooseForm === 'login' && !resetPassword"
+      ></app-login>
+  
+      <app-signup *ngIf="chooseForm === 'signup' && !resetPassword"></app-signup>
+    </div>
   </div>
-  <app-switcher (formEvent)="getForm($event)"></app-switcher>
-
-  <div>
-    <app-login (resetOrLogin)="resetLogin($event)"
-      *ngIf="chooseForm === 'login' && !resetPassword"
-    ></app-login>
-
-    <app-signup *ngIf="chooseForm === 'signup' && !resetPassword"></app-signup>
-  </div>
+  
 </div>

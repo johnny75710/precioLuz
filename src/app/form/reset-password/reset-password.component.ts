@@ -1,8 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FormService } from '../form.service';
-import { Login } from '../interfaces/login.interfaces';
 import { Reset } from '../interfaces/reset.interfaces';
 
 @Component({
@@ -10,18 +9,23 @@ import { Reset } from '../interfaces/reset.interfaces';
   templateUrl: './reset-password.component.html',
   styleUrls: ['./reset-password.component.css']
 })
+
 export class ResetPasswordComponent {
 
+  //Variables
   error: string = '';
   resetForm: FormGroup = new FormGroup({})
   resetPassword: boolean = false;
 
-  constructor(private formService: FormService, private router:Router){}
+  //Constructor
+  constructor(private formService: FormService){}
 
+  //Al iniciar el componente se crea el formulario
   ngOnInit(): void {
       this.resetForm = this.createForm();
   }
 
+  //Método para crear el formulario
   createForm(): FormGroup{
     return new FormGroup({
       username: new FormControl("", [Validators.required, Validators.minLength(5)]),
@@ -31,6 +35,7 @@ export class ResetPasswordComponent {
     })
   }
 
+  //Método para enviar el formulario de reseteo de contraseña
   reset(){
     const formData: Reset = {
       UserName: this.resetForm.value.username,

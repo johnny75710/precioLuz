@@ -50,10 +50,19 @@ span{
 
     #buttons{
         display: flex;
-        width: 100%;
+        flex-direction: column;
         justify-content: center;
     }
-
+    button{
+        width: 80vw !important;
+        margin-bottom: .4rem;
+    }
+    #menu{
+        height: 12rem;
+    }
+    .not-login{
+        height: 7rem !important;
+    }
 
 }
 

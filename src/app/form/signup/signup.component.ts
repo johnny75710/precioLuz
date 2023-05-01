@@ -11,16 +11,18 @@ import { FormService } from '../form.service';
 })
 export class SignupComponent implements OnInit {
 
-    
+  //Variables
   signupForm: FormGroup = new FormGroup({})
   house: number = 0;
   error: string = ''; 
   constructor(private formService: FormService){}
 
+  //Al iniciar el componente se crea el formulario
   ngOnInit(): void {
     this.signupForm = this.createForm()
   }
 
+  //Método para crear el formulario
   createForm(): FormGroup{
     return new FormGroup({
       name: new FormControl("", [Validators.required, Validators.minLength(5)]),
@@ -33,6 +35,7 @@ export class SignupComponent implements OnInit {
     })
   }
 
+  //Método para enviar el formulario
   signup() {
     const formData: Signup = {
       Name: this.signupForm.value.name,
@@ -42,8 +45,6 @@ export class SignupComponent implements OnInit {
       Security_A: this.signupForm.value.security_a,
       House:  this.consumption()
     }
-    console.log(formData)
-
     this.formService.signup(formData).subscribe(
       res => {
         this.error = 'noError'
@@ -51,7 +52,7 @@ export class SignupComponent implements OnInit {
     )
   }
 
-
+  //Método para calcular el consumo deL usuario
   consumption() {
     let consumption = this.signupForm.value.consumption
     let size = this.signupForm.value.size;

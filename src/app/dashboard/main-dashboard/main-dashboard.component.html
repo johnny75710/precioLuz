@@ -1,5 +1,4 @@
 <app-menu [username]="username" [isLoged]="isLoged"></app-menu>
 <div id="content">
     <app-content [username]="username" [isLoged]="isLoged" [prices]="prices" *ngIf="pricesUp"></app-content>
-    <div class="pricesDown" *ngIf="!pricesUp">Hay un problema y no podemos obtener los datos. Por favor, inténtelo de nuevo más tarde</div>
 </div>

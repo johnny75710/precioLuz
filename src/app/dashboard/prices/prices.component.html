@@ -3,19 +3,19 @@
     <p>💡</p>
     <p>{{maxPrice.Hour}}</p>
     <p>Precio más alto</p>
-    <p>{{maxPrice.Price}} €/kWh</p>
+    <p>{{maxPrice.Price.toLocaleString('es', {minimumFractionDigits: 3})}} €/kWh</p>
   </div>
   <div>
     <p>💡</p>
     <p>Precio medio</p>
     <p>Media</p>
-    <p>{{mediumPrice}} €/kWh</p>
+    <p>{{mediumPrice.toLocaleString('es', {minimumFractionDigits: 3})}} €/kWh</p>
   </div>
   <div>
     <p>💡</p>
     <p>{{minPrice.Hour}}</p>
     <p>Precio más bajo</p>
-    <p>{{minPrice.Price}} €/kWh</p>
+    <p>{{minPrice.Price.toLocaleString('es', {minimumFractionDigits: 3})}} €/kWh</p>
   </div>
 </div>
 
@@ -25,7 +25,8 @@
   <div class="container-hours">
     <div *ngFor="let item of allPrices">
       <span [ngClass]="{'red': item.Price > mediumPrice, 'green': item.Price <= mediumPrice}">{{ item.Hour }}</span>&nbsp;
-      <span>{{ item.Price.toFixed(3) }} €/kWh</span>
+      <span>{{ item.Price.toLocaleString('es', {minimumFractionDigits: 3}) }} €/kWh</span>
+
     </div>
   </div>
 </div>

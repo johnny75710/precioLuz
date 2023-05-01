@@ -6,19 +6,24 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent implements OnInit {
+
+  //Al iniciar el componente inicializamos la funcion para obtener los precios
   ngOnInit(): void {
     this.getPrices();
   }
 
+  //Recibimos los datos del componente padre
   @Input() prices: any = [];
   @Input() isLoged: boolean = false;
   @Input() username: string = '';
   
+  //Declaramos las variables que vamos a utilizar
   minPrice: any = {}
   maxPrice: any = {}
   mediumPrice: number = 0;
   allPrices: any = [this.prices.length];
 
+  //Funcion para trabjar con los precios
   getPrices(){
 
     let calcMedium = 0;

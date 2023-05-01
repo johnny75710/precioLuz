@@ -9,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainFormsComponent{
 
+  //Variables
   resetPassword:boolean = false;
   chooseForm: string = 'login'
   title: string = 'Iniciar sesión'
   subtitle: string = 'Introduce usuario y contraseña <br> para acceder'
   
+  //Método para cambiar el formulario de login a signup
   getForm(e: string) {
     this.chooseForm = e;
-
     if(this.chooseForm == 'login'){
       this.resetPassword= false;
       this.title = 'Iniciar sesión';
@@ -28,6 +29,7 @@ export class MainFormsComponent{
     }
   }
 
+  //Método para cambiar el formulario de login a reset
   resetLogin(e:boolean){
     if(!e){
       this.title = 'Iniciar sesión';

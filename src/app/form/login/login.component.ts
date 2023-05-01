@@ -11,15 +11,18 @@ import { Login } from '../interfaces/login.interfaces';
 })
 export class LoginComponent implements OnInit{
 
+  //Variables
   error: string = '';
   loginForm: FormGroup = new FormGroup({})
   resetPassword: boolean = false;
   linkMessage: string = '¿Contraseña olvidada?'
 
+  //Emisor de evento para cambiar el formulario de login a reseteo de contraseña
   @Output() resetOrLogin = new EventEmitter<boolean>();
 
   constructor(private formService: FormService, private router:Router){}
 
+  //Al iniciar el componente se crea el formulario
   ngOnInit(): void {
       this.loginForm = this.createForm();
       if(localStorage.getItem('token')){
@@ -27,6 +30,7 @@ export class LoginComponent implements OnInit{
       }
   }
 
+  //Método para crear el formulario
   createForm(): FormGroup{
     return new FormGroup({
       username: new FormControl("", [Validators.required, Validators.minLength(5)]),
@@ -34,6 +38,7 @@ export class LoginComponent implements OnInit{
     })
   }
 
+  //Método para enviar el formulario de login
   login(){
     const formData: Login = {
       UserName: this.loginForm.value.username,
@@ -51,6 +56,7 @@ export class LoginComponent implements OnInit{
     }, error => this.error = error.error.Message)
   }
 
+  //Método para cambiar el formulario de login a reseteo de contraseña y viceversa
   resetPwd(){
     if(this.resetPassword){
       this.resetPassword = false;

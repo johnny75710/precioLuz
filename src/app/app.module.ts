@@ -11,6 +11,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     ],
     providers: [],
     bootstrap: [AppComponent],
+    // Importamos los módulos que vamos a usar en nuestra aplicación
     imports: [
         BrowserModule,
         AppRoutingModule,

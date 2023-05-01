@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-switcher',
@@ -6,13 +6,16 @@ import { Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./switcher.component.css']
 })
 
-export class SwitcherComponent implements OnInit{
+export class SwitcherComponent implements OnInit {
 
-    isLoginActive: boolean = true;
-    userChoice: string = 'login';
+  //Variables
+  isLoginActive: boolean = true;
+  userChoice: string = 'login';
 
-    @Output() formEvent = new EventEmitter<string>();
-    
+  //Evento para cambiar el formulario de login a signup
+  @Output() formEvent = new EventEmitter<string>();
+
+  //Método para cambiar el formulario de login a signup y viceversa
   toggleActive(activeElement: string): void {
     if (activeElement === 'login') {
       this.isLoginActive = true;
@@ -21,9 +24,10 @@ export class SwitcherComponent implements OnInit{
       this.isLoginActive = false;
       this.userChoice = 'signup'
     }
-
     this.formEvent.emit(this.userChoice)
   }
+
+  //Cuando se inicializa el componente se emite el evento con el componente login por defecto
 
   ngOnInit(): void {
     this.formEvent.emit(this.userChoice)

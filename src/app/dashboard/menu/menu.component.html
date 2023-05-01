@@ -5,7 +5,7 @@
   <app-consumption (consumptionEvent)="getConsumption($event)"></app-consumption>
 </div>
 
-<div id="menu">
+<div id="menu" [ngClass]="{'not-login': !isLoged}">
   <div>
     <span>⚡</span> <span>{{ username }}</span>
   </div>

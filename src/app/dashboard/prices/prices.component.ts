@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PricesComponent{
 
+  //Datos traídos desde el componente padre ContentComponent
   @Input() maxPrice: any = {}
   @Input() minPrice: any = {}
   @Input() mediumPrice: number = 0;

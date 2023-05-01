@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class MainDashboardComponent implements OnInit {
 
+  //Variables
   today = new Date();
   date: Object = {};
 
@@ -22,13 +23,13 @@ export class MainDashboardComponent implements OnInit {
 
   }
 
+  //Al iniciar el componente, inicializamos las funciones
   ngOnInit(): void {
-
     this.checkLogin();
-
     this.checkPrices();
   }
 
+  //Funcion para comprobar si el usuario esta logeado
   checkLogin(){
     if (!localStorage.getItem('token')) {
       this.isLoged = false;
@@ -42,12 +43,12 @@ export class MainDashboardComponent implements OnInit {
         err => {
           this.isLoged = false;
           this.username = 'Bienvenido';
-          console.log(err)
         }
       );
     }
   }
 
+  //Funcion para comprobar los precios de la luz
   checkPrices(){
     this.date = {
       date: this.datePipe.transform(this.today, 'dd/MM/yyyy'),
@@ -57,10 +58,8 @@ export class MainDashboardComponent implements OnInit {
     this.dashboard.getPrices(this.date).subscribe(
       res => {
         this.prices = res.Data;
-        console.log(this.prices)
         this.pricesUp = true;
       }, err => {
-        console.log(err)
         this.pricesUp = false
       }
     )

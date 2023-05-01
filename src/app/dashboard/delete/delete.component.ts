@@ -10,10 +10,13 @@ export class DeleteComponent {
 
   constructor(private dashboard: DashboardService){}
 
+  //Emitimos los datos al componente padre
   @Output() closeEvent = new EventEmitter<boolean>();
   
+  //Declaramos las variables que vamos a utilizar
   closed: boolean = true;
 
+  //Funcion para cerrar el componente
   close(){
     if(this.closed){
       this.closed = false;
@@ -21,6 +24,7 @@ export class DeleteComponent {
     }
   }
 
+  //Funcion para eliminar la cuenta del usuario
   deleteUser(){
     this.dashboard.delUser().subscribe( res => {
       localStorage.removeItem('token');
